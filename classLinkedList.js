@@ -2,19 +2,19 @@ import Node from "./classNode.js";
 
 class LinkedList {
     constructor(){
-        this.head = null;
-        this.tail = null;
+        this.headNode = null;
+        this.tailNode = null;
     }
 
     getList(){
-        return this.head;
+        return this.headNode;
     }
 
     append(data){
-        if(!this.head){
-            this.head = new Node(data);
+        if(!this.headNode){
+            this.headNode = new Node(data);
         } else {
-            let currentNode = this.head;
+            let currentNode = this.headNode;
             while(currentNode.nextNode){
                 currentNode = currentNode.nextNode;
             }
@@ -23,24 +23,38 @@ class LinkedList {
     }
 
     prepend(data){
-        if(!this.head){
-            this.head = new Node(data);
+        if(!this.headNode){
+            this.headNode = new Node(data);
         } else {
-            let currentNodes = this.head;
-            this.head = new Node(data);
-            this.head.nextNode = currentNodes;
+            let currentNodes = this.headNode;
+            this.headNode = new Node(data);
+            this.headNode.nextNode = currentNodes;
         };
     }
 
     size(){
-        if(!this.head){return 0};
+        if(!this.headNode){return 0};
         let size = 1;
-        let currentNode = this.head;
+        let currentNode = this.headNode;
         while(currentNode.nextNode){
             currentNode = currentNode.nextNode;
             size++;
         };
         return size;
+    }
+
+    head(){
+        return this.headNode.data;
+    }
+
+    tail(){
+        if(!this.headNode){return null};
+        let tailNode = null;
+        let currentNode = this.headNode;
+        while(currentNode.nextNode){
+            currentNode = currentNode.nextNode;
+        };
+        return currentNode.data;
     }
 };
 
