@@ -57,8 +57,30 @@ class LinkedList {
         return currentNode.data;
     }
 
-    index(index){
-        console.log("index to be implemented")
+    at(index){
+        //position is one-indexed
+        if(!this.headNode){return "List is empty."};
+
+        let listSize = this.size();
+
+        if(index > listSize){
+            return `Index is higher than list size, select index from 1 to ${listSize}`;
+        };
+
+        let data = null;
+        let currentNode = this.headNode;
+        let currentPosition = 1;
+
+        while(currentNode){
+            if(currentPosition == index){
+                data = currentNode.data;
+                break;
+            };
+            currentNode = currentNode.nextNode;
+            currentPosition++;
+        }
+
+        return data;
     }
 
     pop(){

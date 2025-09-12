@@ -19,3 +19,5 @@ console.log("Last item in the list")
 console.log(list.tail())
 
 console.log(list.toString())
+
+console.log(`Retrieve data at index 5: ${list.at(5)}`)
