@@ -74,7 +74,17 @@ class LinkedList {
     }
 
     toString(){
-        console.log("toString to be implemented")
+        if(!this.headNode){return null};
+        let listString = "";
+        let currentNode = this.headNode;
+
+        while(currentNode.nextNode){
+            listString += `( ${currentNode.data} ) -> `;
+            currentNode = currentNode.nextNode;
+        }
+
+        listString += `( ${currentNode.data} ) -> null`;
+        return listString;
     }
 
     insertAt(index){
