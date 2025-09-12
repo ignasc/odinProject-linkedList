@@ -1,14 +1,25 @@
+import Node from "./classNode.js";
+
 class LinkedList {
     constructor(){
-        this.list = [];
+        this.head = null;
+        this.tail = null;
     }
 
     getList(){
-        return this.list;
+        return this.head;
     }
 
-    addNode(node){
-        this.list.push(node);
+    append(data){
+        if(!this.head){
+            this.head = new Node(data);
+        } else {
+            let currentNode = this.head;
+            while(currentNode.nextNode){
+                currentNode = currentNode.nextNode;
+            }
+            currentNode.nextNode = new Node(data);
+        };
     }
 };
 

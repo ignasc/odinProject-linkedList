@@ -1,11 +1,12 @@
 import LinkedList from "./classLinkedList.js";
-import Node from "./classNode.js";
 
+const list = new LinkedList();
 
-let linkedList = new LinkedList();
-let node = new Node();
+list.append("dog");
+list.append("cat");
+list.append("parrot");
+list.append("hamster");
+list.append("snake");
+list.append("turtle");
 
-linkedList.addNode(new Node("data", 200))
-
-console.log(node.getNode())
-console.log(linkedList.getList())
+console.log(list.getList())

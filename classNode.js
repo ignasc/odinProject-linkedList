@@ -1,13 +1,13 @@
 class Node {
-    constructor(data = null, next = null){
+    constructor(data = null, nextNode = null){
         this.data = data;
-        this.next = next;
+        this.nextNode = nextNode;
     }
 
     getNode(){
         return {
             "data": this.data,
-            "next": this.next,
+            "nextNode": this.nextNode,
         };
     }
 };
