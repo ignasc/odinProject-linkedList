@@ -84,7 +84,23 @@ class LinkedList {
     }
 
     pop(){
-        console.log("pop to be implemented")
+        if(!this.headNode){return};
+        if(!this.headNode.nextNode){
+            this.headNode = null;
+            return;
+        };
+
+        let currentNode = this.headNode;
+        let previousNode = this.headNode;
+
+        while (currentNode) {
+            if(!currentNode.nextNode){
+                previousNode.nextNode = null;
+                break;
+            };
+            previousNode = currentNode;
+            currentNode = currentNode.nextNode;
+        }
     }
 
     contains(value){

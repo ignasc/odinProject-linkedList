@@ -21,3 +21,7 @@ console.log(list.tail())
 console.log(list.toString())
 
 console.log(`Retrieve data at index 5: ${list.at(5)}`)
+
+console.log("Remove last node.")
+list.pop();
+console.log(list.toString())
