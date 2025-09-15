@@ -117,8 +117,21 @@ class LinkedList {
         return false;
     }
 
-    find(){
-        console.log("find to be implemented")
+    find(value){
+        if(!this.headNode){return null};
+
+        let currentNode = this.headNode;
+        let currentPosition = 1;
+
+        while (currentNode) {
+            if(currentNode.data == value){
+                return currentPosition;
+            };
+            currentNode = currentNode.nextNode;
+            currentPosition++;
+        }
+
+        return null;
     }
 
     toString(){

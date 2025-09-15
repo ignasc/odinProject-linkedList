@@ -28,3 +28,7 @@ console.log(list.toString())
 
 console.log(`Is value "dog" in list? ${list.contains("dog")}`)
 console.log(`Is value "cow" in list? ${list.contains("cow")}`)
+
+console.log(`Position of "dog" value is ${list.find("dog")}`)
+console.log(`Position of "cow" value is ${list.find("cow")}`)
+console.log(`Position of "hamster" value is ${list.find("hamster")}`)
