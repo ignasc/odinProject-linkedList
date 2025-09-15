@@ -25,3 +25,6 @@ console.log(`Retrieve data at index 5: ${list.at(5)}`)
 console.log("Remove last node.")
 list.pop();
 console.log(list.toString())
+
+console.log(`Is value "dog" in list? ${list.contains("dog")}`)
+console.log(`Is value "cow" in list? ${list.contains("cow")}`)

@@ -104,7 +104,17 @@ class LinkedList {
     }
 
     contains(value){
-        console.log("contains to be implemented")
+        if(!this.headNode){return false};
+
+        let currentNode = this.headNode;
+        while (currentNode) {
+            if(currentNode.data == value){
+                return true;
+            };
+            currentNode = currentNode.nextNode;
+        }
+
+        return false;
     }
 
     find(){
