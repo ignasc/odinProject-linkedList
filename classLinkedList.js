@@ -148,8 +148,27 @@ class LinkedList {
         return listString;
     }
 
-    insertAt(index){
-        console.log("insertAt to be implemented")
+    insertAt(value, index){
+        if(!this.headNode){return};
+        if(index < 1){return};
+
+        let previousNode = this.headNode;
+        let currentNode = this.headNode;
+
+        let currentPosition = 1;
+
+        while(currentNode){
+            if(currentPosition == index){
+                let newNode = new Node(value);
+                newNode.nextNode = currentNode;
+                previousNode.nextNode = newNode;
+                return;
+            };
+
+            previousNode = currentNode;
+            currentNode = currentNode.nextNode;
+            currentPosition++;
+        };
     }
 
     remoteAt(index){
