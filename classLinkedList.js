@@ -171,8 +171,25 @@ class LinkedList {
         };
     }
 
-    remoteAt(index){
-        console.log("remoteAt to be implemented")
+    removeAt(index){
+        if(!this.headNode){return};
+        if(index <= 1){return};
+
+        let previousNode = this.headNode;
+        let currentNode = this.headNode;
+
+        let currentPosition = 1;
+
+        while(currentNode){
+            if(currentPosition == index){
+                previousNode.nextNode = currentNode.nextNode;
+                return;
+            };
+
+            previousNode = currentNode;
+            currentNode = currentNode.nextNode;
+            currentPosition++;
+        };
     }
 };
 
