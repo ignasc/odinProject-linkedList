@@ -152,7 +152,7 @@ class LinkedList {
         if(!this.headNode){return};
         if(index < 1){return};
 
-        let previousNode = this.headNode;
+        let previousNode = null;
         let currentNode = this.headNode;
 
         let currentPosition = 1;
@@ -160,8 +160,14 @@ class LinkedList {
         while(currentNode){
             if(currentPosition == index){
                 let newNode = new Node(value);
+
                 newNode.nextNode = currentNode;
-                previousNode.nextNode = newNode;
+
+                if(!previousNode){
+                    this.headNode = newNode;
+                }else{
+                    previousNode.nextNode = newNode;
+                };
                 return;
             };
 
