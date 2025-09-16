@@ -179,16 +179,22 @@ class LinkedList {
 
     removeAt(index){
         if(!this.headNode){return};
-        if(index <= 1){return};
+        if(index < 1){return};
 
-        let previousNode = this.headNode;
+        let previousNode = null;
         let currentNode = this.headNode;
 
         let currentPosition = 1;
 
         while(currentNode){
             if(currentPosition == index){
-                previousNode.nextNode = currentNode.nextNode;
+
+                if(index == 1){
+                    this.headNode = currentNode.nextNode;
+                } else{
+                    previousNode.nextNode = currentNode.nextNode;
+                };
+
                 return;
             };
 
