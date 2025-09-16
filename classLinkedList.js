@@ -6,10 +6,6 @@ class LinkedList {
         this.tailNode = null;
     }
 
-    getList(){
-        return this.headNode;
-    }
-
     append(data){
         if(!this.headNode){
             this.headNode = new Node(data);
